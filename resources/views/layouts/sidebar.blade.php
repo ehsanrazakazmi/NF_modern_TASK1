@@ -32,7 +32,33 @@
             </div>
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span>@lang('translation.menu')</span></li>
+
+
+                <!-- User Management -->
                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <i class="ri-user-fill"></i> <span>@lang('translation.UM')</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="role-management" class="nav-link">@lang('translation.role')</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dashboard-crm" class="nav-link">@lang('translation.user')</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index" class="nav-link">Edit Role</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </li> 
+                <!-- user management button ends   -->
+
+
+                <!-- this is the one item in side bar  -->
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                         <i class="las la-tachometer-alt"></i> <span>@lang('translation.dashboards')</span>
                     </a>
@@ -58,8 +84,9 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
-                <li class="nav-item">
+                </li>  --}}
+                <!-- end Dashboard Menu -->
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
                         <i class="lab la-delicious"></i> <span>@lang('translation.apps')</span>
                     </a>
@@ -291,9 +318,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
                         <i class="las la-columns"></i> <span>@lang('translation.layouts')</span>
                     </a>
@@ -313,9 +340,9 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
+                </li> <!-- end Dashboard Menu --> --}}
 
-                <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.pages')</span></li>
+                {{-- <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.pages')</span></li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
@@ -464,9 +491,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
                         <i class="las la-pager"></i> <span>@lang('translation.pages')</span>
                     </a>
@@ -518,9 +545,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLanding" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLanding">
                         <i class="ri-rocket-line"></i> <span>@lang('translation.landing')</span>
                     </a>
@@ -627,8 +654,8 @@
                         </div>
                     </div>
                 </li>
-
-                <li class="nav-item">
+ --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
                         <i class="las la-briefcase"></i> <span>@lang('translation.advance-ui')</span>
                     </a>
@@ -904,7 +931,7 @@
                         </ul>
                     </div>
                 </li>
-
+ --}}
             </ul>
         </div>
         <!-- Sidebar -->

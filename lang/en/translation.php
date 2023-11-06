@@ -1,6 +1,10 @@
 <?php
 return [
     // these are witten on the tab title of browser window
+
+    "UM"=>"User Management",       // user management
+    "role"=>"Role Management",
+    "user"=>"User Management",
     "newpage"=>"New Page",
     "menu"=>"Menu",
     "dashboards"=>"Dashboard hai",
