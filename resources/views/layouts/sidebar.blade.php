@@ -42,13 +42,13 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="role-management" class="nav-link">@lang('translation.role')</a>
+                                <a href="{{route('admin.roles.index')}}" class="nav-link">@lang('translation.role')</a>
                             </li>
                             <li class="nav-item">
                                 <a href="dashboard-crm" class="nav-link">@lang('translation.user')</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index" class="nav-link">Edit Role</a>
+                                <a href="{{route('admin.permissions.index')}}" class="nav-link">Permissions Management</a>
                             </li>
                             
                         </ul>

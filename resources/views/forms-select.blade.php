@@ -363,7 +363,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4 col-md-6">
+
+                                {{-- I will implement this in roles and permissions page --}}
+                                {{-- <div class="col-lg-4 col-md-6">
                                     <div class="mb-3">
                                         <label for="choices-multiple-remove-button" class="form-label text-muted">With
                                             remove button</label>
@@ -377,7 +379,7 @@
                                             <option value="Choice 4">Choice 4</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-lg-4 col-md-6">
                                     <div class="mb-3">
