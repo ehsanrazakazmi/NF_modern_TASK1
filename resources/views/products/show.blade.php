@@ -39,16 +39,17 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
-                                {{ $product->name }}
+                                <strong style="font-size: larger;">Name:</strong>
+                                <span style="font-weight: bold; font-size: larger;">{{ $product->name }}</span>
+
                             </div>
                         </div>
                         
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Details:</strong>
-                                {{ $product->detail }}
+                                <strong style="font-size: larger;">Details:</strong>
+                                <span style="font-weight: bold; font-size: larger;">{{ $product->detail }}</span>
                             </div>
                         </div>
                     </div>

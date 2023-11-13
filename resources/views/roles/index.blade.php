@@ -66,7 +66,8 @@
                             @foreach ($roles as $key => $role)
                             <tr>
                                
-                                <td class="text-center">{{++$i}}</td>
+                                <td class="text-center">{{$role->id}}</td>
+                                {{-- <td class="text-center">{{++$i}}</td> --}}
                                 <td class="text-center">{{$role->name}}</td>
                                 
                                 <td>
@@ -121,7 +122,7 @@
 
     
     <!-- Modal -->
-    {!! $roles->render() !!}
+    {{-- {!! $roles->render() !!} --}}
 
     <!--end modal -->
 @endsection

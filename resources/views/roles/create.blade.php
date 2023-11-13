@@ -56,13 +56,13 @@
                 <div class="card-body">
                     {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
                     <div class="row">
-                            <div class="col-6">
+                            {{-- <div class="col-6"> --}}
                                 <div class="mb-3">
                                     <label for="firstNameinput" class="form-label">Name</label>
                                     {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
                                 </div>
-                            </div><!--end col-->
-                            <div class="col-6">
+                            {{-- </div><!--end col--> --}}
+                            {{-- <div class="col-6"> --}}
                                 <div class="mb-3">
                                     <label for="lastNameinput" class="form-label">Permissions</label>
                                     <br/>
@@ -72,7 +72,7 @@
                                     <br/>
                                     @endforeach
                                 </div>
-                            </div><!--end col-->
+                            {{-- </div><!--end col--> --}}
                             
 
                             <div class="col-lg-12">

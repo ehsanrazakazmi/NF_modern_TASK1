@@ -62,7 +62,8 @@
                             <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                
-                                <td class="text-center"><?php echo e(++$i); ?></td>
+                                <td class="text-center"><?php echo e($role->id); ?></td>
+                                
                                 <td class="text-center"><?php echo e($role->name); ?></td>
                                 
                                 <td>
@@ -120,8 +121,7 @@
 
     
     <!-- Modal -->
-    <?php echo $roles->render(); ?>
-
+    
 
     <!--end modal -->
 <?php $__env->stopSection(); ?>

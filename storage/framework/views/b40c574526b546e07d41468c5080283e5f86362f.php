@@ -64,9 +64,13 @@
 
                             <br>
 
-                            <strong>Role:</strong>
-                            <?php echo Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')); ?>
+                            
 
+                            <strong>Role:</strong>
+                            <?php echo Form::select('roles[]', $roles, $userRole, array('class' => 'form-control')); ?>
+
+                            
+                            
 
                             <button type="submit" class="btn rounded-pill btn-success waves-effect waves-light mt-3">Update</button>
                         </div>

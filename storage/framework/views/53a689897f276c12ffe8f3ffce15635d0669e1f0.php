@@ -39,8 +39,8 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
-                                <?php echo e($product->name); ?>
+                                <strong style="font-size: larger;">Name:</strong>
+                                <span style="font-weight: bold; font-size: larger;"><?php echo e($product->name); ?></span>
 
                             </div>
                         </div>
@@ -48,9 +48,8 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Details:</strong>
-                                <?php echo e($product->detail); ?>
-
+                                <strong style="font-size: larger;">Details:</strong>
+                                <span style="font-weight: bold; font-size: larger;"><?php echo e($product->detail); ?></span>
                             </div>
                         </div>
                     </div>

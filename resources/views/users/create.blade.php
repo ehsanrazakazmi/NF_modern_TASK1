@@ -29,14 +29,9 @@
         <div class="col-lg-12">
             
             <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title mb-0 pt-6"> User Create</h5>
-                    <div class="col-md-12 text-end">
-
-                        <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal"
-                        id="create-btn" data-bs-target="#showModal"><i
-                        class="ri-add-line align-bottom me-1 mb-3"></i> Add New Users</button>
-                    </div>        
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title mb-0 flex-grow-1">Edit New User</h4>
+                    <a href="{{ route('users.index') }}" class="btn btn-outline-success waves-effect waves-light px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Go to Users Index</a>
                 </div>
 
 
@@ -93,7 +88,7 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <strong>Role:</strong>
-                                    {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+                                    {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
         
                                 </div>
                             </div><!--end col-->

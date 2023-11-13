@@ -29,9 +29,9 @@
         <div class="col-lg-12">
             
             <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title mb-0 pt-6">Show User</h5>
-
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title mb-0 flex-grow-1">Edit New User</h4>
+                    <a href="{{ route('users.index') }}" class="btn btn-outline-success waves-effect waves-light px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Go to Users Index</a>
                 </div>
 
                 
@@ -39,27 +39,30 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
-                                {{ $user->name }}
+                                <strong style="font-size: 1.5em; color: #333;">Name:</strong>
+                                <span style="font-size: 1.2em; font-weight: bold; color: #555;">{{ $user->name }}</span>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Email:</strong>
-                                {{ $user->email }}
+                                <strong style="font-size: 1.5em; color: #333;">Email:</strong>
+                                <span style="font-size: 1.2em; color: #555;">{{ $user->email }}</span>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Roles:</strong>
-                                @if(!empty($user->getRoleNames()))
-                                    @foreach($user->getRoleNames() as $v)
-                                        <label class="badge badge-success">{{ $v }}</label>
-                                    @endforeach
-                                @endif
+                                <strong style="font-size: 1.5em; color: #333;">Roles:</strong>
+                                <div>
+                                    @if(!empty($user->getRoleNames()))
+                                        @foreach($user->getRoleNames() as $v)
+                                            <span style="font-size: 1.2em; font-weight: bold; color: #007BFF; margin-right: 10px;">{{ $v }}</span>
+                                        @endforeach
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <!-- end col -->

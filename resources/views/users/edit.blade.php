@@ -64,8 +64,13 @@
 
                             <br>
 
+                            {{-- <strong>Role:</strong>
+                            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!} --}}
+
                             <strong>Role:</strong>
-                            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
+                            {!! Form::select('roles[]', $roles, $userRole, array('class' => 'form-control')) !!}
+                            
+                            
 
                             <button type="submit" class="btn rounded-pill btn-success waves-effect waves-light mt-3">Update</button>
                         </div>
