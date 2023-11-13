@@ -42,13 +42,13 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="<?php echo e(route('admin.roles.index')); ?>" class="nav-link"><?php echo app('translator')->get('translation.role'); ?></a>
+                                <a href="<?php echo e(route('roles.index')); ?>" class="nav-link"><?php echo app('translator')->get('translation.role'); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a href="dashboard-crm" class="nav-link"><?php echo app('translator')->get('translation.user'); ?></a>
+                                <a href="<?php echo e(route('products.index')); ?>" class="nav-link">Product Management</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo e(route('admin.permissions.index')); ?>" class="nav-link">Permissions Management</a>
+                                <a href="<?php echo e(route('users.index')); ?>" class="nav-link">Users Management</a>
                             </li>
                             
                         </ul>

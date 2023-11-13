@@ -24,7 +24,7 @@
                 </div><!-- end card header --> --}}
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4 class="card-title mb-0 flex-grow-1">Edit New User</h4>
-                    <a href="{{ route('users.index') }}" class="btn btn-outline-success waves-effect waves-light px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Go to Users Index</a>
+                    <a href="{{ route('roles.index') }}" class="btn btn-outline-success waves-effect waves-light px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Go to Roles Index</a>
                 </div>
 
                 {{-- this is for error messege --}}
@@ -40,39 +40,30 @@
                 @endif
                 <div class="card-body">
 
-                    <form method="POST" action="{{ route('users.update', $user->id) }}">
-                        @csrf
-                        @method('PATCH')
+                    {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
+
                     {{-- <div id="table-gridjs"></div> --}}
                     {{-- <button type="button" class="btn btn-outline-success waves-effect waves-light"><a href="{{ route('admin.roles.index') }}"
                         class="px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Role Index</a></button> --}}
-                        <div class="form-floating">
-                            <input type="text" class="form-control mt-3" id="name" name="name"
-                                value="{{$role->name}}">
-                            <label for="name">Role Name</label>
+                        <div >
+                            <strong>Name:</strong>
+                            <br>
+                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
 
-
-                            <input type="text" class="form-control mt-3" id="email-field" name="email-field"
-                                value="{{$role->email}}">
-                            <label for="email-field">Role Email</label>
-
-
-                            <input type="text" class="form-control mt-3" id="password" name="password"
-                                value="{{$role->password}}">
-                            <label for="password">Role password</label>
-
-
-                            <input type="text" class="form-control mt-3" id="password" name="password"
-                                value="{{$role->password}}">
-                            <label for="password">Confirm Name</label>
-
-                            <label for="roles[]" class="form-control mt-3">Enter Password</label>
-                            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
-
+                            <br>
+                            
+                            <strong>Permission:</strong>
+                            <br/>
+                            @foreach($permission as $value)
+                                <label>{{ Form::checkbox('permission[]', $value->name, in_array($value->name, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                                {{ $value->name }}</label>
+                            <br/>
+                            @endforeach
+                            <br/>
                             <button type="submit" class="btn rounded-pill btn-success waves-effect waves-light mt-3">Update</button>
                         </div>
-                    </form>
-                </div><!-- end card-body -->
+                        {!! Form::close() !!}
+                    </div><!-- end card-body -->
             </div><!-- end card -->
         </div>
         <!-- end col -->

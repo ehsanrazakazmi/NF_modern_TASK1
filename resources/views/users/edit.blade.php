@@ -40,38 +40,36 @@
                 @endif
                 <div class="card-body">
 
-                    <form method="POST" action="{{ route('users.update', $user->id) }}">
-                        @csrf
-                        @method('PATCH')
+                    {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
                     {{-- <div id="table-gridjs"></div> --}}
                     {{-- <button type="button" class="btn btn-outline-success waves-effect waves-light"><a href="{{ route('admin.roles.index') }}"
                         class="px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Role Index</a></button> --}}
                         <div class="form-floating">
-                            <input type="text" class="form-control mt-3" id="name" name="name"
-                                value="{{$role->name}}">
-                            <label for="name">Role Name</label>
+                            <strong>Name:</strong>
+                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+
+                            <br>
+                            <strong>Email:</strong>
+                            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+                            <br>
+
+                            <strong>Password:</strong>
+                            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
 
 
-                            <input type="text" class="form-control mt-3" id="email-field" name="email-field"
-                                value="{{$role->email}}">
-                            <label for="email-field">Role Email</label>
+                            <br>
 
+                            <strong>Confirm Password:</strong>
+                            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
 
-                            <input type="text" class="form-control mt-3" id="password" name="password"
-                                value="{{$role->password}}">
-                            <label for="password">Role password</label>
+                            <br>
 
-
-                            <input type="text" class="form-control mt-3" id="password" name="password"
-                                value="{{$role->password}}">
-                            <label for="password">Confirm Name</label>
-
-                            <label for="roles[]" class="form-control mt-3">Enter Password</label>
-                            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+                            <strong>Role:</strong>
+                            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
 
                             <button type="submit" class="btn rounded-pill btn-success waves-effect waves-light mt-3">Update</button>
                         </div>
-                    </form>
+                        {!! Form::close() !!}
                 </div><!-- end card-body -->
             </div><!-- end card -->
         </div>

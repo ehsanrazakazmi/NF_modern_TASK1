@@ -66,7 +66,7 @@ class PermissionRegistrar
         $this->cacheExpirationTime = config('permission.cache.expiration_time') ?: \DateInterval::createFromDateString('24 hours');
 
         $this->teams = config('permission.teams', false);
-        $this->teamsKey = config('permission.column_names.team_foreign_key');
+        $this->teamsKey = config('permission.column_names.team_foreign_key', 'team_id');
 
         $this->cacheKey = config('permission.cache.key');
 
@@ -98,7 +98,7 @@ class PermissionRegistrar
     /**
      * Set the team id for teams/groups support, this id is used when querying permissions/roles
      *
-     * @param  int|string|\Illuminate\Database\Eloquent\Model  $id
+     * @param  int|string|\Illuminate\Database\Eloquent\Model|null  $id
      */
     public function setPermissionsTeamId($id): void
     {
