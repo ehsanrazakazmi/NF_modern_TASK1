@@ -19,6 +19,11 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+    //  assigning middlewares to specific routes
     function __construct()
     {
          $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
@@ -26,12 +31,21 @@ class RoleController extends Controller
          $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:role-delete', ['only' => ['destroy']]);
     }
-    
+    // --------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    //  getting index page and showing all roles accept Admin
     public function index(Request $request): View
     {
         // $roles = Role::orderBy('id','ASC')->paginate(5);
@@ -40,24 +54,46 @@ class RoleController extends Controller
         $roles = Role::whereNotIn('name', ['Admin'])->get();
         return view('roles.index',compact('roles'));
     }
-    
+    // ----------------------------------------------------------------------
+
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  this will show the create page
     public function create(): View
     {
         $permission = Permission::get();
         return view('roles.create',compact('permission'));
     }
-    
+    // -----------------------------------------------------------------------------------------
+
+
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+
+     // allows to store the roles by selecting permissions
     public function store(Request $request): RedirectResponse
     {
         $this->validate($request, [
@@ -71,12 +107,26 @@ class RoleController extends Controller
         return redirect()->route('roles.index')
                         ->with('success','Role created successfully');
     }
+// ---------------------------------------------------------------------------------
+
+
+
+
+
+
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+    //  it will show the name or role with its assigned permissions
     public function show($id): View
     {
         $role = Role::find($id);
@@ -86,13 +136,23 @@ class RoleController extends Controller
     
         return view('roles.show',compact('role','rolePermissions'));
     }
-    
+    // ---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+    //  allows to edit the data
     public function edit($id): View
     {
         $role = Role::find($id);
@@ -103,6 +163,12 @@ class RoleController extends Controller
     
         return view('roles.edit',compact('role','permission','rolePermissions'));
     }
+//----------------------------------------------------------------------------------------------------------
+
+
+
+
+
     
     /**
      * Update the specified resource in storage.
@@ -111,6 +177,10 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+    //  update the data
     public function update(Request $request, $id): RedirectResponse
     {
         $this->validate($request, [
@@ -127,12 +197,20 @@ class RoleController extends Controller
         return redirect()->route('roles.index')
                         ->with('success','Role updated successfully');
     }
+// ------------------------------------------------------------------------------------
+
+
+
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    //  delete the data in index page
     public function destroy($id): RedirectResponse
     {
         DB::table("roles")->where('id',$id)->delete();

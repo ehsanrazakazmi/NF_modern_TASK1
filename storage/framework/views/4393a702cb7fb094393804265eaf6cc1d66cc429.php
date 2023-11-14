@@ -51,12 +51,18 @@
                             
                             <strong>Permission:</strong>
                             <br/>
-                            <?php $__currentLoopData = $permission; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <label><?php echo e(Form::checkbox('permission[]', $value->name, in_array($value->name, $rolePermissions) ? true : false, array('class' => 'name'))); ?>
+                            
 
-                                <?php echo e($value->name); ?></label>
-                            <br/>
+                            <?php $__currentLoopData = $permission; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <label>
+                                    <?php echo e(Form::checkbox('permission[]', $value->name, in_array($value->name, $rolePermissions), array('class' => 'name'))); ?>
+
+                                    <?php echo e($value->name); ?>
+
+                                </label>
+                                <br/>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                             <br/>
                             <button type="submit" class="btn rounded-pill btn-success waves-effect waves-light mt-3">Update</button>
                         </div>
