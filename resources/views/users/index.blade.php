@@ -42,6 +42,11 @@
                   <p>{{ $message }}</p>
                 </div>
                 @endif
+                @if ($message = Session::get('alert'))
+                <div class="alert alert-success">
+                  <p>{{ $message }}</p>
+                </div>
+                @endif
 
                 <div class="card-body">
                     <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">

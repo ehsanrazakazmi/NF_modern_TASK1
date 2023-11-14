@@ -19,7 +19,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request): View
+    public function index(Request $request)
     {
         if ($request->user()->hasRole('Admin')) {
             $data = User::orderBy('id','DESC')->paginate(5);
@@ -27,7 +27,8 @@ class UserController extends Controller
                 ->with('i', ($request->input('page', 1) - 1) * 5);
             // Your existing logic for users.index
         } else {
-            return redirect('/')->with('error', 'You do not have permission to view this page.');
+            // return redirect()->back();
+            return redirect()->back()->with('alert', 'Sorry you have no access');
         }
     }
     
