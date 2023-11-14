@@ -37,7 +37,7 @@ class RoleController extends Controller
         // $roles = Role::orderBy('id','ASC')->paginate(5);
         // return view('roles.index',compact('roles'))
         //     ->with('i', ($request->input('page', 1) - 1) * 5);
-        $roles = Role::get();
+        $roles = Role::whereNotIn('name', ['Admin'])->get();
         return view('roles.index',compact('roles'));
     }
     

@@ -47,9 +47,12 @@
                             <li class="nav-item">
                                 <a href="<?php echo e(route('products.index')); ?>" class="nav-link">Product Management</a>
                             </li>
+                            
+                                
                             <li class="nav-item">
                                 <a href="<?php echo e(route('users.index')); ?>" class="nav-link">Users Management</a>
                             </li>
+                           
                             
                         </ul>
                     </div>
